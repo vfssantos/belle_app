@@ -5,19 +5,109 @@
 //  Created by herocule on 5/18/15.
 //  Copyright (c) 2015 herocule. All rights reserved.
 //
+#define thumb_color [UIColor colorWithRed:99/255.0f green:159/255.0f blue:213/255.0f alpha:1.0f]
 
 #import "AppDelegate.h"
+#import "SplashViewController.h"
+#import "SignInViewController.h"
+#import "FBLoginHandler.h"
 
+#import "HomeViewController.h"
+#import "CameraViewController.h"
+#import "FeedbackViewController.h"
+#import "LooksViewController.h"
+#import "BaseTabBarViewController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [FBSession.activeSession handleOpenURL:url];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    FBLoginHandler *fbHandler = [[FBLoginHandler alloc] init];
+    [fbHandler updateFacebookSessionwithblock:^(BOOL successed , NSError *error)
+     {
+     }];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"KohinoorDevanagari-Medium" size:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[UINavigationBar appearance] setBarTintColor:thumb_color];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    SplashViewController *sub = [[SplashViewController alloc] init];
+    self.window.rootViewController = sub;
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(removeSplash) userInfo:nil repeats:NO];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
+}
+- (void)removeSplash
+{
+  //  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    SignInViewController *sub = [[SignInViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sub];
+    [UIView transitionWithView:self.window
+                      duration:0.8
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        BOOL oldState = [UIView areAnimationsEnabled];
+                        [UIView setAnimationsEnabled:NO];
+                         if([[[NSUserDefaults standardUserDefaults] objectForKey:@"belle_loginFlg"]  isEqual: @"yes"])
+                         {
+                             [self gotoMainPage];
+                         }
+                         else{
+                             self.window.rootViewController = nav;
+                             
+                             self.window.backgroundColor = [UIColor whiteColor];
+                             [self.window makeKeyAndVisible];
+                         }
+                       [UIView setAnimationsEnabled:oldState];
+                    }
+                    completion:nil];
+    
+    
+    
+}
+- (void) gotoMainPage{
+    HomeViewController *homeView = [[HomeViewController alloc] init];
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:homeView];
+    
+    CameraViewController *searchView = [[CameraViewController alloc] init];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:searchView];
+    
+    FeedbackViewController *notificationView = [[FeedbackViewController alloc] init];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:notificationView];
+    
+    LooksViewController *profileView = [[LooksViewController alloc] init];
+    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:profileView];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"KohinoorDevanagari-Medium" size:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[UINavigationBar appearance] setBarTintColor:thumb_color];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    NSArray *myViewControllers = [[NSArray alloc] initWithObjects:
+                                  nav1,
+                                  nav2,
+                                  nav3,
+                                  nav4,nil];
+    BaseTabBarViewController *sub = [[BaseTabBarViewController alloc] init];
+    [sub setViewControllers:myViewControllers];
+    
+    self.window.rootViewController = sub;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

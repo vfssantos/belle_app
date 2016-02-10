@@ -1,0 +1,93 @@
+Sobre o App:
+
+1. Depois de postar uma foto, não há como mudar para quem o usuário deseja enviar.
+	R: Este problema não vai existir mais.
+	Prioridade: 1
+2. Android, como está?
+	R:Temos o arquivo do aplicativo .apk, mas acredito que não temos o código fonte.
+	Tarefa: Pedir o código fonte do android para a Eun. Achar um programador para analisar o código.
+	Prioridade: 3
+3. A foto está achatando.
+	R: Deve ser arrumado. Problema específico do iPhone 4.
+	Prioridade: 5
+4. Parece que eu estou mais gorda na foto.
+	R: O aplicativo está abrindo a câmera com zoom. Por isso a impressão de que engorda. Deve ser arrumado na próxima atualização:
+	Prioridade: 5
+5. Sobre cortar a foto:
+	R: Ferramenta para fazer crop na foto no aplicativo.
+	Prioridade: 4
+6. Não consigo favoritar as fotos no tranding.
+	R: As fotos do Trading devem poder ser favoritadas por qualquer usuário.
+	Prioridade: 4
+7. Não consigo mudar a minha senha e ver configurações gerais da minha conta:
+	R: O aplicativo deverá:
+		-> Mudar a senha
+		Prioridade: 3
+		-> Apagar o usuário
+		Prioridade: 3
+		-> Termos e Condições
+		Prioridade: 0
+		-> Sair do Aplicativo
+		Prioridade: 0
+		-> Mudar o E-mail.
+		Prioridade: 3
+8. As fotos do Tranding Looks são sempre as mesmas.
+	R: No atual momento, quanto mais tempo uma foto foi postada, maior a probabilidade de ela ficar mais tempo no Tranding Looks. Devemos pensar em outro algoritmo.
+	Prioridade: 3
+9. Não consigo contextualizar a foto que estou postando. Sem isso eu acredito que o feedback não será adequado.
+	R: Abrir para quem está postando a foto colocar uma legenda para o comentário
+	Prioridade: 5 
+10. Não gosto do dislike. Faz mal para minha auto-estima.
+	R: Pensar em outro termo mais suave para substituir o dislike.
+	Prioridade: 4
+11. Quero comentar nas outras fotos para dar dicas.
+	Você poderá fazer comentários com hashtags em atualizações futuras
+	Prioridade: 4
+12. Trocar o Skip para esquerda e dislike para cima
+	R: o Skip deverá ficar no lugar do skip
+	Prioridade: 5
+13. Passe uma foto sem querer e quero voltar.
+	R: Haverá um botão voltar.
+	Prioridade: 3
+14. Ao clicar em dislike, aparecer opções sobre o que a pessoa não gostou.
+	R: 
+	Prioridade:3
+15. Qual a diferença entre postar a foto para o mundo e para os amigos?	
+	R: Não haverá mais (no primeiro momento) a opção de enviar a foto para os amigos.
+	Prioridade: 5
+16. Após postar a foto, eu não sei aonde ela foi parar.
+	R: Após postar a foto, o aplicativo deve levar o usuário para a tela de feedback na foto que eu postei.
+	Prioridade: 5
+16. Como eu posso explorar as fotos sem ter que dar like ou dislike?
+	R: Haverá uma tela com a possibilidade de explorar novas fotos através das hashtags.
+	Prioridade: 4
+16. Não consigo postar fotos antigas da minha biblioteca de fotos. Como faço?
+	R: Iremos liberar a postagem de fotos antigas. O usuário deverá se responsabilizar pelo conteúdo que posta (constar no termos de uso).
+	Prioridade: 4
+17. Não entendi muito bem o funcionamento geral do aplicativo:
+	R: Tutorial for dummies será feito.
+	Prioridade: 4
+18. Quero um lugar para guardar os meus look que só eu possa ver.
+	R: O aplicativo terá isso em alguma versão futura. Guardar informação de datas
+	Prioridade: 3
+19. Verificar a quantidade de acessos simultâneos que o servidor aguenta.
+	Prioridade: 5
+
+
+Página de Administração:
+
+1. Faltam muitas informações e funcionalidades na página de adm.
+	R: Fazer melhorias na página administrativa.
+	Prioridade:2
+
+
+Divulgação:
+
+1. Manter, até a próxima atualização, a divulgação dentro de um grupo fechado de amigos.
+
+
+Sobre o custo do app:
+1. Reenviar o custo total do aplicativo até o momento.
+
+
+Sobre Investimento do Aplicativo:
